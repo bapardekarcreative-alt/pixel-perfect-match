@@ -66,7 +66,7 @@ function LinkButton({ link, delay }: { link: BrandLink; delay: number }) {
         {iconFor(link)}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block font-display text-lg font-semibold leading-tight text-foreground">{title}</span>
+        <span className="block font-display text-base font-semibold leading-tight sm:text-lg text-foreground">{title}</span>
         <span className="mt-0.5 block truncate text-sm text-muted-foreground">{link.sublabel}</span>
       </span>
       <ArrowUpRight
@@ -96,10 +96,10 @@ function Index() {
   const locations = brandLinks.filter((l) => l.kind === "location");
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-clip">
       <main className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 sm:px-8 md:py-14 lg:min-h-screen lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-12">
         {/* Product visual */}
-        <section aria-label="Our signature cold coco" className="order-2 lg:order-1">
+        <section aria-label="Our signature cold coco" className="order-2 px-3 sm:px-0 lg:order-1">
           <div className="rise relative mx-auto max-w-md lg:max-w-none" style={{ animationDelay: "150ms" }}>
             <div className="bg-cocoa absolute -inset-3 -z-10 rotate-[-2.5deg] rounded-[2.25rem] opacity-90 sm:-inset-4" aria-hidden="true" />
             <figure className="overflow-hidden rounded-[2rem] bg-cream-deep shadow-photo">
