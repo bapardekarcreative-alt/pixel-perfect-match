@@ -30,4 +30,5 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- All brand link URLs live in `src/lib/brand-links.ts` with a `confirmed` flag; never hardcode a social or map URL in components (keeps unconfirmed placeholders in one auditable place).
+- All social and map URLs live only in `src/links/social-links.ts` (each with a `confirmed` flag); `src/lib/brand-links.ts` builds buttons from it, and components never hardcode a URL (one easy-to-edit place for the client's links).
+- Gallery photos are auto-loaded from `src/assets/products/` (filename order, name from filename) and shown in one fixed 4:5 frame; add/remove photos there, never list them in components.

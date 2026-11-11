@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import type { ReactNode } from "react";
 
-import productImg from "@/assets/cold-coco-glass.jpg";
 import logoImg from "@/assets/govanis-logo.png";
+import { ProductGallery } from "@/components/ProductGallery";
 import { brandLinks, facebookUrl, instagramUrl, type BrandLink } from "@/lib/brand-links";
 
 export const Route = createFileRoute("/")({
@@ -101,18 +101,8 @@ function Index() {
         {/* Product visual */}
         <section aria-label="Our signature cold coco" className="order-2 px-3 sm:px-0 lg:order-1">
           <div className="rise relative mx-auto max-w-md lg:max-w-none" style={{ animationDelay: "150ms" }}>
-            <div className="bg-cocoa absolute -inset-3 -z-10 rotate-[-2.5deg] rounded-[2.25rem] opacity-90 sm:-inset-4" aria-hidden="true" />
-            <figure className="overflow-hidden rounded-[2rem] bg-cream-deep shadow-photo">
-              <img
-                src={productImg}
-                alt="A tall glass of thick, creamy Govani's cold coco topped with chocolate shavings"
-                width={1024}
-                height={1280}
-                fetchPriority="high"
-                className="aspect-[4/5] w-full object-cover transition-transform duration-[1.2s] ease-out hover:scale-[1.03]"
-              />
-            </figure>
-            <div className="float-slow absolute -bottom-5 -right-2 rounded-2xl border border-border bg-card px-5 py-3 shadow-lift sm:-right-6">
+            <ProductGallery />
+            <div className="float-slow pointer-events-none absolute -right-2 -top-5 sm:-right-6 rounded-2xl border border-border bg-card px-5 py-3 shadow-lift">
               <p className="font-display text-2xl font-bold leading-none text-primary">19+</p>
               <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Coco varieties</p>
             </div>
