@@ -6,7 +6,8 @@ export function ProductGallery() {
   const [active, setActive] = useState(0);
   const count = productPhotos.length;
   const next = () => setActive((i) => (i + 1) % count);
-  const current = productPhotos[active];
+  const current = productPhotos[active] ?? productPhotos[0];
+  if (!current) return null;
 
   return (
     <div>
